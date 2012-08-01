@@ -1,0 +1,213 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\Game_All\04\游戏04.v4p" systemname="游戏04" filename="F:\MyCode\myVVVV\fuckV4\Game_All\04\游戏04.v4p" bgcolor="40676">
+   <BOUNDS type="Window" left="1965" top="1845" width="9540" height="8040">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="30" top="15" width="4110" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="30" top="15" width="8835" height="885">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|从这次开始全部建立使用sub-patch,类似程序建立需要使用的“类”，并且碰撞检测使用Intersect节点&cr;&lf;同时通过使用s和r节点进行发送和接收变量,程序中如果想看到s和r数据关系的话，ctrl+f查看&cr;&lf;但最好不要像这个例子这样，s和r中使用中文，最好用英文，以免有错误产生|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE systemname="moveObjects" filename="moveObjects.v4p" componentmode="Hidden" id="3" nodename="moveObjects.v4p">
+   <BOUNDS type="Node" left="240" top="2655" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="240" top="2655" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9420" top="1920" width="9330" height="7845">
+   </BOUNDS>
+   <PIN pinname="渲染输出" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="物体数量">
+   </PIN>
+   <PIN pinname="物体xy大小" slicecount="1" values="0.12">
+   </PIN>
+   </NODE>
+   <NODE systemname="guy" filename="guy.v4p" componentmode="Hidden" id="4" nodename="guy.v4p">
+   <BOUNDS type="Node" left="2955" top="1515" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2955" top="1515" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8535" top="3750" width="5190" height="4680">
+   </BOUNDS>
+   <PIN pinname="渲染输出" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="大小" slicecount="1" values="0.07">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1">
+   </PIN>
+   <PIN pinname="TranslateX" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="CollisionCheck" filename="CollisionCheck.v4p" componentmode="Hidden" id="5" nodename="CollisionCheck.v4p">
+   <BOUNDS type="Node" left="4440" top="3315" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4440" top="3315" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8250" top="2475" width="9270" height="7245">
+   </BOUNDS>
+   <PIN pinname="渲染输出" visible="1">
+   </PIN>
+   <PIN pinname="Transform item" visible="1">
+   </PIN>
+   <PIN pinname="Transform Guy" visible="1">
+   </PIN>
+   <PIN pinname="Intersects Quad" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="240" top="4380" width="8250" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="渲染输出" dstnodeid="6" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="渲染输出" dstnodeid="6" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="渲染输出" dstnodeid="6" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Transform Out" dstnodeid="5" dstpinname="Transform item">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Transform Out" dstnodeid="5" dstpinname="Transform Guy">
+   </LINK>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="4440" top="3975" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Send String" slicecount="1" values="碰撞检测" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Intersects Quad" dstnodeid="7" dstpinname="Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="255" top="1065" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="255" top="1065" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="物体数量" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="3" dstpinname="物体数量">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="9">
+   <BOUNDS type="Node" left="240" top="5970" width="6165" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="240" top="5970" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12030" top="1950" width="7395" height="6030">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="240" top="5565" width="6075" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Layer" dstnodeid="10" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="9" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Mouse (System Window)" nodename="Mouse (System Window)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="2940" top="1020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="X" dstnodeid="4" dstpinname="TranslateX">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y" dstnodeid="4" dstpinname="TranslateY">
+   </LINK>
+   <NODE systemname="PerfMeter (Debug)" filename="%VVVV%\lib\nodes\modules\Debug\PerfMeter (Debug).v4p" nodename="PerfMeter (Debug)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="3240" top="5160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="10" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="5190" top="4785" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5190" top="4785" width="570" height="240">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Enabled">
+   </LINK>
+   <NODE componentmode="InABox" id="15" nodename="IOBox (Value Advanced)" systemname="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="100" left="7005" top="2310" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1650" left="7005" top="2310" type="Box" width="450">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="6">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Intersects Quad" dstnodeid="15" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>

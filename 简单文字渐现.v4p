@@ -1,0 +1,199 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\简单文字渐现.v4p" systemname="简单文字渐现" filename="F:\MyCode\myVVVV\fuckV4\简单文字渐现.v4p">
+   <BOUNDS type="Window" left="3480" top="2910" width="4875" height="6000">
+   </BOUNDS>
+   <NODE systemname="Text (EX9.Texture)" filename="%VVVV%\addonpack\lib\nodes\plugins\TextEX9Texture.dll" nodename="Text (EX9.Texture)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="420" top="810" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="512">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="512">
+   </PIN>
+   <PIN pinname="Text">
+   </PIN>
+   <PIN pinname="Text Rendering Mode" slicecount="1" values="MultiLineWordWrap">
+   </PIN>
+   <PIN pinname="Normalize" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <NODE systemname="SetAlpha (EX9.Texture Join)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\SplitJoin\SetAlpha\SetAlpha (EX9.Texture Join).v4p" nodename="SetAlpha (EX9.Texture Join)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="405" top="3750" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Alpha" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="405" top="3750">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="570" top="1875" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="405" top="4440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="4">
+   <BOUNDS type="Node" left="405" top="5130" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="405" top="5130" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8355" top="2910" width="6585" height="5955">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Pillow (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Pillow\Pillow (EX9.Texture Source).v4p" nodename="Pillow (EX9.Texture Source)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="705" top="3000" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Gamma" visible="1">
+   </PIN>
+   <PIN pinname="Clamp" visible="1">
+   </PIN>
+   <PIN pinname="Translate" visible="1">
+   </PIN>
+   <PIN pinname="Scale" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1890" top="2400" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3420" top="1695" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Destination Maximum" slicecount="1" values="-2">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Wrap">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="3420" top="1125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Shape" slicecount="1" values="Linear">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="3420" top="600" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Reverse" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="8" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="6" dstpinname="Y">
+   </LINK>
+   <NODE nodename="Vector (2D Join)" id="11" systemname="Vector (2d Join)">
+   <PIN pinname="X" slicecount="1" values="-4">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="2">
+   </PIN>
+   <BOUNDS type="Node" left="1020" top="2415" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="XY" dstnodeid="5" dstpinname="Gamma">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="1185" top="1170" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1185" top="1170" width="795" height="480">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="2" values="1,0.8">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|" encoded="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Clamp">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="XY" dstnodeid="5" dstpinname="Translate">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="14">
+   <BOUNDS type="Node" left="2085" top="1185" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2085" top="1185" width="795" height="480">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="2" values="1,3">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|" encoded="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Scale">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="1" dstpinname="Alpha">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="3" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="3" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="15" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1065" top="60" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1065" top="60" width="1905" height="645">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="这是很容易做出来的一个效果，结合内置的shader" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="vvvv" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output String" dstnodeid="0" dstpinname="Text">
+   </LINK>
+   </PATCH>

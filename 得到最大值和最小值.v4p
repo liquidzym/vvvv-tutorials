@@ -1,0 +1,199 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\得到最大值和最小值.v4p" systemname="得到最大值和最小值" filename="F:\MyCode\myVVVV\fuckV4\得到最大值和最小值.v4p">
+   <BOUNDS type="Window" left="5880" top="1710" width="7380" height="7830">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="0" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="15" top="45" width="3960" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15" top="45" width="6000" height="975">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|经常要得到一个spread中的最大值和最小值，这里给出2个方法&cr;&lf; 其中sort+cdr的方法更快，但如果spreads中经常变更的话用bounds+sift&cr;&lf;ctrl+f9可以查看debug模式&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" debug="0" id="14" nodename="Bounds (Spectral)" systemname="Bounds (Spectral)">
+   <BOUNDS height="270" left="5220" top="5175" type="Node" width="705">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Minimum" visible="1">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" debug="0" id="13" nodename="Sift (Value)" systemname="Sift (Value)">
+   <BOUNDS height="270" left="5685" top="5775" type="Node" width="600">
+   </BOUNDS>
+   <PIN pinname="Filter" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" debug="0" id="12" nodename="RandomSpread (Spreads Legacy)" systemname="RandomSpread (Spreads Legacy)">
+   <BOUNDS height="0" left="3075" top="1440" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Spread Count" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="11" nodename="Sort (Spreads)" systemname="Sort (Spreads)">
+   <BOUNDS height="270" left="2325" top="4710" type="Node" width="480">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Former Index" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="10" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="1425" top="6435" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1425" top="6435" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="1860" top="5610" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Slice Index|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="9" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="285" top="6435" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="285" top="6435" type="Box" width="690">
+   </BOUNDS>
+   <BOUNDS height="160" left="855" top="-360" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Highest Value|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="8" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="450" top="2190" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="1530" left="450" top="2190" type="Box" width="2385">
+   </BOUNDS>
+   <BOUNDS height="160" left="6345" top="8820" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Columns" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|10 Random Values|">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="Input" srcnodeid="8" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Input" srcnodeid="8" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Input" srcnodeid="8" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="Hidden" id="7" nodename="GetSlice (Spreads)" systemname="GetSlice (Spreads)">
+   <BOUNDS height="270" left="465" top="5805" type="Node" width="735">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input" srcnodeid="8" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Y Input Value" srcnodeid="7" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Filter" srcnodeid="14" srcpinname="Maximum">
+   </LINK>
+   <NODE componentmode="Hidden" id="5" nodename="CDR (Spreads)" systemname="CDR (Spreads)">
+   <BOUNDS height="270" left="2880" top="5115" type="Node" width="525">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Remainder" visible="1">
+   </PIN>
+   <PIN pinname="Last Slice" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Input" srcnodeid="11" srcpinname="Former Index">
+   </LINK>
+   <NODE componentmode="InABox" id="4" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="2655" top="5610" type="Node" width="1905">
+   </BOUNDS>
+   <BOUNDS height="270" left="2655" top="5610" type="Box" width="1905">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" encoded="0" values="用car得到最小值">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Y Input Value" srcnodeid="12" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Y Input Value" srcnodeid="5" srcpinname="Last Slice">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Index" srcnodeid="5" srcpinname="Last Slice">
+   </LINK>
+   <NODE componentmode="InABox" id="2" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5205" top="6435" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5205" top="6435" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="3645" top="5550" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Slice Index|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4125" top="6435" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="4125" top="6435" type="Box" width="690">
+   </BOUNDS>
+   <BOUNDS height="160" left="2640" top="-420" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Highest Value|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Y Input Value" srcnodeid="14" srcpinname="Maximum">
+   </LINK>
+   <LINK dstnodeid="2" dstpinname="Y Input Value" srcnodeid="13" srcpinname="Input Index">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="4155" top="1005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Cycles" dstnodeid="12" dstpinname="Random Seed">
+   </LINK>
+   </PATCH>

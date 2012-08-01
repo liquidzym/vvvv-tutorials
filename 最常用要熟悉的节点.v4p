@@ -1,0 +1,311 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\最常用要熟悉的节点.v4p" systemname="最常用要熟悉的节点" filename="F:\MyCode\myVVVV\fuckV4\最常用要熟悉的节点.v4p">
+   <BOUNDS type="Window" left="5040" top="375" width="9300" height="9765">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="0" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="75" top="60" width="1395" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="75" top="60" width="2205" height="330">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="自己看帮助例子，F1" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="150" top="540" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="150" top="540" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="||" encoded="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Inspektor (VVVV)" nodename="Inspektor (VVVV)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="1275" top="480" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1275" top="480" width="1860" height="2520">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12150" top="2100" width="5100" height="8250">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Renderer (TTY)" nodename="Renderer (TTY)" componentmode="InABox" id="3">
+   <BOUNDS type="Node" left="3285" top="465" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3285" top="465" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13875" top="2745" width="6120" height="4860">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="5790" top="465" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5790" top="465" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16005" top="2790" width="6120" height="4860">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="105" top="3375" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FileTexture (EX9.Texture)" nodename="FileTexture (EX9.Texture)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1425" top="3375" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2625" top="3375" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="3540" top="3375" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="4905" top="3375" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Blend (EX9.RenderState)" nodename="Blend (EX9.RenderState)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="120" top="3855" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="1140" top="3855" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Homography (Transform 2d)" nodename="Homography (Transform 2d)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="2505" top="3855" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="120" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1215" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="2385" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="3375" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="4455" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="5715" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="CircularSpread (Spreads)" nodename="CircularSpread (Spreads)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="7110" top="4530" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="120" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="1200" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="2250" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Select (Value)" nodename="Select (Value)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="2985" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="4185" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Vector (2d Split)" nodename="Vector (2d Split)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="5280" top="5145" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="165" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="1290" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Toggle (Animation)" nodename="Toggle (Animation)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="2400" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FlipFlop (Animation)" nodename="FlipFlop (Animation)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="3375" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="MultiFlipFlop (Animation)" nodename="MultiFlipFlop (Animation)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="4425" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="5760" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="6885" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="7665" top="5970" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="34">
+   <BOUNDS type="Node" left="135" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="1215" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="2310" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="3105" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Separate (String)" nodename="Separate (String)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="3885" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Dir (File)" nodename="Dir (File)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="5040" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="5985" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FormatValue (String)" nodename="FormatValue (String)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="6930" top="6570" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Mouse (System Window)" nodename="Mouse (System Window)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="150" top="7275" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Attractor (2d)" nodename="Attractor (2d)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="1245" top="7275" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Cross (2d)" nodename="Cross (2d)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="2490" top="7275" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="HitTest (2d Quad)" filename="%VVVV%\addonpack\lib\nodes\plugins\HitTest2dNodes.dll" nodename="HitTest (2d Quad)" componentmode="Hidden" id="45">
+   <BOUNDS type="Node" left="3420" top="7275" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3420" top="7275">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="B-Spline (3d Surface)" filename="%VVVV%\lib\nodes\modules\3D\B-Spline (3D Surface).v4p" nodename="B-Spline (3d Surface)" componentmode="Hidden" id="47">
+   <BOUNDS type="Node" left="4440" top="7275" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4440" top="7275">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Perlin (3d)" nodename="Perlin (3d)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="6045" top="7275" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="ADSR (Animation)" nodename="ADSR (Animation)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="165" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Automata (Animation)" nodename="Automata (Animation)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="1140" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="2265" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameCounter (Animation)" nodename="FrameCounter (Animation)" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="3615" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="5010" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameDifference (Animation)" nodename="FrameDifference (Animation)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="6240" top="7785" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Heading (Animation)" nodename="Heading (Animation)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="180" top="8310" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="56">
+   <BOUNDS type="Node" left="1200" top="8310" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Sequencer (Animation)" nodename="Sequencer (Animation)" componentmode="Hidden" id="57">
+   <BOUNDS type="Node" left="1950" top="8310" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Spray (Animation)" filename="%VVVV%\lib\nodes\plugins\Spray\Spray.csproj" nodename="Spray (Animation)" componentmode="Hidden" id="58">
+   <BOUNDS type="Node" left="3075" top="8310" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3075" top="8310">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="4470" top="8310" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="60">
+   <BOUNDS type="Node" left="5040" top="8310" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FileStream2 (DShow9)" nodename="FileStream2 (DShow9)" componentmode="Hidden" id="62">
+   <BOUNDS type="Node" left="195" top="8850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="63">
+   <BOUNDS type="Node" left="1575" top="8850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="64">
+   <BOUNDS type="Node" left="2775" top="8850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AsVideo (EX9.Texture)" nodename="AsVideo (EX9.Texture)" componentmode="Hidden" id="65">
+   <BOUNDS type="Node" left="3885" top="8850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="66" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6375" top="8760" width="1095" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6375" top="8760" width="2280" height="480">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="只是其中一部分" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   </PATCH>

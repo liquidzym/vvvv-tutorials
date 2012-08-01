@@ -1,0 +1,191 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\逻辑_01.v4p" systemname="逻辑_01" filename="F:\MyCode\myVVVV\fuckV4\逻辑_01.v4p" locked="0">
+   <BOUNDS type="Window" left="7965" top="1260" width="9555" height="8520">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="29" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="60" top="15" width="1755" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="60" top="15" width="3465" height="525">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|传统程序中Loops, Iterations的使用节点|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="30" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="105" top="570" width="4485" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="105" top="570" width="6345" height="1290">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|注意，v4中提倡的是尽量避免使用loops的方式，详细的说明后面在放上,简单说就是v4中所有的节点在每一帧同时只执行一次,而且你不用担心哪个节点的数据传递的会有延误，都是同时到达就像电路板中的电流一样。&cr;&lf;所以常见会用I,Integral,Differential,Cross,Resample,Shift等其它的节点来实现传统程序中常见的一些东西。|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="6720" top="165" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="7215" top="165" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Integral (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Integral (Spreads)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="8130" top="165" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8130" top="165">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Multiply (Differential)" nodename="Multiply (Differential)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="6735" top="630" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Differential (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Differential (Spreads)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="7410" top="630" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7410" top="630">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Cross (2d)" nodename="Cross (2d)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="6765" top="1080" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Resample (Spreads)" nodename="Resample (Spreads)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="7665" top="1080" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="39" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="120" top="1935" width="2520" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="120" top="1935" width="6330" height="6090">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|做for,do while,然后到什么时候在执行&cr;&lf;使用Counter,或frameCouter来做,可以做类似int i = 0,i &lt; xxx,i++&cr;&lf;&cr;&lf;通过使用FrameDelay和FrameDelay(String)来做常见feedback looping也就是你们经常提到的一个循环之后再返回到某个条件。&cr;&lf;&cr;&lf;条件：使用=(vaule)或=(String)来进行条件判断，布尔值通过and,or,not等,需要根据某个特定时间进行判断触发某个事件的话使用monoFlop&cr;&lf;&cr;&lf;if then else,使用change(Animation),swith语句，就用switch(vaule Input)&cr;&lf;&cr;&lf;自动条件判断（基于state machine的方式),就是如果这样就干这个，那样就干那个，在那样就做另一个。用AutoMata节点&cr;&lf;&cr;&lf;传统程序中的class,objects,实例，方法等v4中没有(plugins除外)，但相对应就是子节点，就是sub-patch,或Modules（模块)&cr;&lf;&cr;&lf;变量：IoBoxes,send/Receive,和FrameDelay&cr;&lf;&cr;&lf;Arrays,list,数组、链表:那就是Spreads了，但这个确实和传统程序中的array有所区别&cr;&lf;&cr;&lf;数据结构Data structures:就是queue(Spreads)或ringBuffer之类的&cr;&lf;&cr;&lf;null空值:可以看nil节点，避免空值就是avoidNIL|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="6525" top="2130" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameCounter (Animation)" nodename="FrameCounter (Animation)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="7860" top="2130" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="6570" top="2850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="FrameDelay (String)" nodename="FrameDelay (String)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="7815" top="2850" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="6585" top="3420" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="45">
+   <BOUNDS type="Node" left="7245" top="3405" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="46">
+   <BOUNDS type="Node" left="7950" top="3390" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="47">
+   <BOUNDS type="Node" left="6600" top="3840" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AND (Boolean Spectral)" nodename="AND (Boolean Spectral)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="7245" top="3840" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="7995" top="3840" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="6630" top="4290" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="7350" top="4290" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="8250" top="4290" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Automata (Animation)" nodename="Automata (Animation)" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="6660" top="4875" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="6825" top="7725" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="56">
+   <BOUNDS type="Node" left="6810" top="7260" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="RingBuffer (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="RingBuffer (Spreads)" componentmode="Hidden" id="57">
+   <BOUNDS type="Node" left="7665" top="7260" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="58">
+   <BOUNDS type="Node" left="6825" top="6345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Send String">
+   </PIN>
+   </NODE>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="8100" top="6345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="60" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Node" left="8085" top="5745" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8085" top="5745" width="870" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="fuck">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="60" srcpinname="Output Enum" dstnodeid="59" dstpinname="Receive String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="61" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7170" top="5715" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7170" top="5715" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="fuck" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="devnul" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Output String" dstnodeid="58" dstpinname="Send String">
+   </LINK>
+   </PATCH>

@@ -1,0 +1,385 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="F:\MyCode\myVVVV\fuckV4\视频播放3和cons的使用.v4p" systemname="视频播放3和cons的使用" filename="F:\MyCode\myVVVV\fuckV4\视频播放3和cons的使用.v4p" bgcolor="1203711">
+   <BOUNDS type="Window" left="2880" top="270" width="15900" height="9960">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="28" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="60" top="45" width="4455" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="60" top="45" width="5115" height="1410">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|注意，很重要的一点，v4默认的视频不像其它的节点都可以spreadable,默认的是不可以的，除非使用plugin,另外默认的28版本之前都不能跨屏幕渲染的，只有从最新的28版本之后才可以&cr;&lf;此外，格式的话除了quicktime不能播放，其它windows能放的都可以&cr;&lf;&cr;&lf;|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE systemname="Dir (File)" nodename="Dir (File)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="180" top="2655" width="2475" height="270">
+   </BOUNDS>
+   <PIN pinname="Mask">
+   </PIN>
+   <PIN pinname="Directory">
+   </PIN>
+   <PIN pinname="Filenames" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="31" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="180" top="1830" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="180" top="1830" width="705" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="*.*" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="*.*" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="*.*" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Output String" dstnodeid="30" dstpinname="Mask">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="32" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1080" top="1830" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1080" top="1830" width="2325" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="assets\vid" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Directory">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="32" srcpinname="Output String" dstnodeid="30" dstpinname="Directory">
+   </LINK>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="150" top="3780" width="1530" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Duration" visible="1">
+   </PIN>
+   <PIN pinname="End Time" visible="1">
+   </PIN>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Play" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Loop" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="34">
+   <BOUNDS type="Node" left="4230" top="3780" width="1530" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Duration" visible="1">
+   </PIN>
+   <PIN pinname="End Time" visible="1">
+   </PIN>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Play" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Loop" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="885" top="4305" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="4980" top="4305" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="885" top="4860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="4980" top="4710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoTexture (EX9.Texture VMR9)" nodename="VideoTexture (EX9.Texture VMR9)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="135" top="5535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoTexture (EX9.Texture VMR9)" nodename="VideoTexture (EX9.Texture VMR9)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="4470" top="5490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="15" top="7785" width="2430" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (EX9.Texture)" filename="" nodename="Cons (EX9.Texture)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="675" top="6525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In 1" visible="1">
+   </PIN>
+   <PIN pinname="Texture In 2" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (String)" nodename="GetSlice (String)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="1635" top="3300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Filenames" dstnodeid="44" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="44" srcpinname="Output" dstnodeid="33" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="GetSlice (String)" nodename="GetSlice (String)" componentmode="Hidden" id="45">
+   <BOUNDS type="Node" left="5685" top="3270" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output" dstnodeid="34" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Filenames" dstnodeid="45" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Duration" dstnodeid="35" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Duration" dstnodeid="36" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Output" dstnodeid="37" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="38" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Output 1" dstnodeid="34" dstpinname="End Time">
+   <LINKPOINT x="7950" y="2730">
+   </LINKPOINT>
+   <LINKPOINT x="5910" y="2220">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output 1" dstnodeid="33" dstpinname="End Time">
+   <LINKPOINT x="3150" y="3360">
+   </LINKPOINT>
+   <LINKPOINT x="1500" y="4230">
+   </LINKPOINT>
+   <LINKPOINT x="885" y="3300">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Video" dstnodeid="39" dstpinname="Video">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Texture Out" dstnodeid="43" dstpinname="Texture In 1">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Texture Out" dstnodeid="43" dstpinname="Texture In 2">
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Video" dstnodeid="40" dstpinname="Video">
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="46">
+   <BOUNDS type="Node" left="690" top="7095" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="43" srcpinname="Texture Out" dstnodeid="46" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Output Node" dstnodeid="41" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="47">
+   <BOUNDS type="Node" left="7065" top="3705" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7065" top="3705" width="8070" height="5685">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9960" top="7155" width="6120" height="4860">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="55" nodename="Counter (Animation)" systemname="Counter (Animation)">
+   <BOUNDS height="0" left="4920" top="9120" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Minimum" visible="1">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="54" nodename="Keyboard (System Global)" systemname="Keyboard (System Global)">
+   <BOUNDS height="0" left="3750" top="6285" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="KeyCode" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="53" nodename="EQ (Value)" systemname="EQ (Value)">
+   <BOUNDS height="0" left="4950" top="7800" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="53" dstpinname="Input 1" srcnodeid="54" srcpinname="KeyCode">
+   </LINK>
+   <NODE componentmode="InABox" id="52" nodename="IOBox (Value Advanced)" systemname="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="5100" top="7215" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="12000" top="7710" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="5100" top="7215" type="Box" width="645">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="32">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="53" dstpinname="Input 2" srcnodeid="52" srcpinname="Y Output Value">
+   </LINK>
+   <NODE id="51" nodename="TOGEDGE (ANIMATION)" systemname="TogEdge (Animation)">
+   <BOUNDS height="0" left="4935" top="8265" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   <PIN pinname="Bang On Create" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="51" dstpinname="Input" srcnodeid="53" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="55" dstpinname="Up" srcnodeid="51" srcpinname="Up Edge">
+   </LINK>
+   <NODE componentmode="InABox" id="50" nodename="IOBox (Value Advanced)" systemname="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="4830" top="8700" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="12495" top="7710" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="4830" top="8700" type="Box" width="450">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="49" nodename="IOBox (Value Advanced)" systemname="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="5325" top="8700" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="12960" top="8070" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="5325" top="8700" type="Box" width="450">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="55" dstpinname="Minimum" srcnodeid="50" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="55" dstpinname="Maximum" srcnodeid="49" srcpinname="Y Output Value">
+   </LINK>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="46" dstpinname="Index" linkstyle="Bezier">
+   <LINKPOINT x="4920" y="8228">
+   </LINKPOINT>
+   <LINKPOINT x="1545" y="8228">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Layer" dstnodeid="47" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="56">
+   <BOUNDS type="Node" left="13275" top="2580" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="56" srcpinname="Transform Out" dstnodeid="47" dstpinname="View">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="58" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7860" top="3210" width="1095" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7860" top="3210" width="3210" height="315">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="空格键切换视频" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="59" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5745" top="15" width="3405" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5745" top="15" width="6855" height="390">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="cons是很有用的一个节点，可以把n个纹理集中在一起" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   </PATCH>
